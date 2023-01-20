@@ -13,7 +13,6 @@
 $this->setFrameMode(true);
 
 ?>
-
 <?foreach($arResult["ITEMS"] as $arItem):?>
 
     <div class="box1">

@@ -1965,3 +1965,38 @@ a#cancel-comment-reply-link{
  	font-size:6em;
  }
 }
+
+
+.bx-system-auth-form{
+
+	width: 300px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: royalblue;
+}
+.bx-system-auth-form a{
+
+	color: rgb(155, 81, 81);
+}
+
+.bx-system-auth-form input {
+	height: 20px;
+    width: 100%;
+    
+    
+
+}
+input[type="submit" i]{
+
+	border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+

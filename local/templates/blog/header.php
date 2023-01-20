@@ -59,27 +59,43 @@ use Bitrix\Main\Page\Asset;
             </div>
             <div class="header-top-right">
                 <div class="social-icons">
-                    <ul>
-                        <li><a class="youtube" href="#" target="_blank"><span>Youtube</span></a></li>
-                        <li><a class="facebook" href="#" target="_blank"><span>Facebook</span> </a></li>
-                        <li><a class="twitter" href="#" target="_blank"><span>Twitter</span> </a></li>
-                        <li><a class="skype" href="#" target="_blank"><span>Skype</span> </a></li>
-                        <li><a class="likedin" href="#" target="_blank"><span>Likedin</span> </a></li>
-                        <li><a class="vimeo" href="#" target="_blank"><span>vimeo</span> </a></li>
-                        <div class="clear"></div>
-                    </ul>
+                <? $APPLICATION->SetTitle("Home");
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:system.auth.form", 
+	"auth", 
+	array(
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"FORGOT_PASSWORD_URL" => "/auth/forget.php",
+		"PROFILE_URL" => "/auth/personal.php",
+		"REGISTER_URL" => "/auth/registration.php",
+		"SHOW_ERRORS" => "N",
+		"COMPONENT_TEMPLATE" => "auth"
+	),
+	false
+);?><?$APPLICATION->IncludeComponent(
+	"bitrix:system.auth.confirmation",
+	"flat",
+	Array(
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"CONFIRM_CODE" => "confirm_code",
+		"LOGIN" => "login",
+		"USER_ID" => "confirm_user_id"
+	)
+);?>
                 </div>
-                <div class="search_box">
-                    <form>
-                        <input type="text" class="text-box" placeholder="Search for Blog"><input type="submit" value="" />
-                    </form>
-                </div>
+                
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
         </div>
     </div>
 </div>
+
+
+
+
 <!--------------------- Main Content ------------------->
 <div class="wrap">
     <div class="main">
